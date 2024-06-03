@@ -21,7 +21,7 @@ def create_app():
     
     # Initialize extensions
     db.init_app(app)
-    bootstrap = Bootstrap(app)
+    Bootstrap(app)
     
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'

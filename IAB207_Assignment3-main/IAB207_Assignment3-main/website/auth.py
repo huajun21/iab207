@@ -17,17 +17,19 @@ def login():
         username = loginform.username.data
         password = loginform.password.data
         u1 = User.query.filter_by(name=username).first()
-        # need database in models for "User"
+
         if u1 is None:
-            error='User does not exist or invalid username'
-        #check the password - notice password hash function
+            error='A user with those credentials does not exist, try again.'
+
         elif not check_password_hash(u1.password_hash, password): # takes the hash and password
             error='Incorrect password'
+
         if error is None:
-            #all good, set the login_user of flask_login to manage the user
+            #Successful login, redirect to index page
             login_user(u1)
             flash('Succesfully login')
             return redirect(url_for('main.index'))
+        
         else:
             flash(error)
     return render_template('user.html',form=loginform, heading='Login')
@@ -46,32 +48,35 @@ def logout():
 def register():
     register = RegisterForm()
     if (register.validate_on_submit() == True):
+            
             #get data from the form 
             username = register.name.data
             email = register.email.data
             password = register.password.data
             phone_num = register.phone.data
-            address1 = register.address.data
-            # Need database in models for 'User' 
+            address = register.address.data
             u1 = User.query.filter_by(name=username).first()
+
             if u1:
-                flash('User name already exists, please login')
+                flash('User name already exists, please try and login instead')
                 return redirect(url_for('auth.login'))
             p1 = User.query.filter_by(phone=phone_num).first()
             if p1:
-                flash('Phone number registered, Please try another phone number')
+                flash('Phone number already in use, please try again')
                 return redirect(url_for('auth.register'))
+            
             # don't store the password - create password hash
             pwd_hash = generate_password_hash(password)
+
             #create a new user model object
-            new_user = User(name=username, emailid=email,password_hash=pwd_hash,phone=phone_num,address=address1)
+            new_user = User(name=username, emailid=email,password_hash=pwd_hash,phone=phone_num,address=address)
  
             db.session.add(new_user)
             db.session.commit()
-            #commit to the database and redirect to HTML page
-            flash('Succesfully Register, please log in.')
+
+            #commit to the database and redirect to login page
+            flash('Registration successfull, please log in.')
             return redirect(url_for('auth.login'))
-    #the else is called when there is a get message
     else:
         return render_template('user.html', form=register, heading='Register')
 

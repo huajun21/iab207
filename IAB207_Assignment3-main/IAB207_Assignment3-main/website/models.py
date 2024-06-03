@@ -8,8 +8,8 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(50), index=True, nullable=False)
     emailid = db.Column(db.String(100), index=True, unique=True, nullable=False)
     password_hash = db.Column(db.String, nullable=False)
-    phone = db.Column(db.String(10), unique=True, nullable=False)
-    address = db.Column(db.String(100),index=True,nullable=False)
+    phone = db.Column(db.String(10), unique=True, nullable=True)
+    address = db.Column(db.String(100),index=True,nullable=True)
 
     event = db.relationship('Event', backref='User')
     order = db.relationship('Order', backref='User')

@@ -6,7 +6,6 @@ from datetime import datetime
 
 bp = Blueprint('main', __name__)
 
-
 @bp.route('/')
 def index():
     events = Event.query.all()
