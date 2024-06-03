@@ -63,12 +63,12 @@ class UpdateEventForm(FlaskForm):
     event_time = TimeField("New Time:", validators=[InputRequired()])
     event_description = TextAreaField("New Description:", validators=[InputRequired()])
     event_category = SelectField("New Category:", choices=[
-        ('Rock Festival', 'Rock Festival'),
-        ('Jazz Festival', 'Jazz Festival'),
-        ('Electronic Music Festival', 'Electronic Music Festival'),
-        ('Classical Music Festival', 'Classical Music Festival'),
-        ('Hip-Hop Festival', 'Hip-Hop Festival'),
-        ('Folk Music Festival', 'Folk Music Festival')
+        ('Rock', 'Rock'),
+        ('Jazz', 'Jazz'),
+        ('Electronic Music ', 'Electronic Music'),
+        ('Classical Music', 'Classical Music'),
+        ('Hip-Hop', 'Hip-Hop'),
+        ('Folk Music', 'Folk Music')
     ], validators=[InputRequired()])
     image = FileField('New Event Image', validators=[
         FileRequired(message='Image cannot be empty'),
