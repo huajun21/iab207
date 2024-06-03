@@ -27,10 +27,12 @@ def show(event_id):
 def create_event():
     create = EventForm()
     create.event_category.choices = [
-        ('Charity Run', 'Charity Run'),
-        ('Charity Auction', 'Charity Auction'),
-        ('Charity Food Donation', 'Charity Food Donation'),
-        ('Others', 'Others')
+        ('Rock Festival', 'Rock Festival'),
+        ('Jazz Festival', 'Jazz Festival'),
+        ('Electronic Music Festival', 'Electronic Music Festival'),
+        ('Classical Music Festival', 'Classical Music Festival'),
+        ('Hip-Hop Festival', 'Hip-Hop Festival'),
+        ('Folk Music Festival', 'Folk Music Festival')
     ]
 
     if create.validate_on_submit():

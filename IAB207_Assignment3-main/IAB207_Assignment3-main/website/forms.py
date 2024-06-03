@@ -41,10 +41,12 @@ class EventForm(FlaskForm):
     event_time = TimeField("Time:", validators=[InputRequired()])
     event_description = TextAreaField("Description:", validators=[InputRequired()])
     event_category = SelectField("Category:", choices=[
-        ('Charity Run', 'Charity Run'),
-        ('Charity Auction', 'Charity Auction'),
-        ('Charity Food Donation', 'Charity Food Donation'),
-        ('Others', 'Others')
+        ('Rock Festival', 'Rock Festival'),
+        ('Jazz Festival', 'Jazz Festival'),
+        ('Electronic Music Festival', 'Electronic Music Festival'),
+        ('Classical Music Festival', 'Classical Music Festival'),
+        ('Hip-Hop Festival', 'Hip-Hop Festival'),
+        ('Folk Music Festival', 'Folk Music Festival')
     ], validators=[InputRequired()])
     image = FileField('Event Image', validators=[
         FileRequired(message='Image cannot be empty'),
@@ -61,10 +63,12 @@ class UpdateEventForm(FlaskForm):
     event_time = TimeField("New Time:", validators=[InputRequired()])
     event_description = TextAreaField("New Description:", validators=[InputRequired()])
     event_category = SelectField("New Category:", choices=[
-        ('Charity Run', 'Charity Run'),
-        ('Charity Auction', 'Charity Auction'),
-        ('Charity Food Donation', 'Charity Food Donation'),
-        ('Others', 'Others')
+        ('Rock Festival', 'Rock Festival'),
+        ('Jazz Festival', 'Jazz Festival'),
+        ('Electronic Music Festival', 'Electronic Music Festival'),
+        ('Classical Music Festival', 'Classical Music Festival'),
+        ('Hip-Hop Festival', 'Hip-Hop Festival'),
+        ('Folk Music Festival', 'Folk Music Festival')
     ], validators=[InputRequired()])
     image = FileField('New Event Image', validators=[
         FileRequired(message='Image cannot be empty'),
