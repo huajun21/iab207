@@ -146,7 +146,7 @@ def cancel(event_id):
 def open(event_id):
     event = Event.query.get(event_id)
     if not event:
-        flash('Event not found', 'error')
+        flash('Event could not be found', 'error')
         return redirect(url_for('main.index'))
 
     if event.user != current_user:
