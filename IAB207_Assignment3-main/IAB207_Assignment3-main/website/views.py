@@ -26,24 +26,43 @@ def search():
 def all():
     return redirect(url_for('main.index'))
 
+@bp.route('/rock')
+def rock():
+    search = '%' + 'rock' + '%'
+    events = Event.query.filter(Event.event_category.like(search)).all()
+    return render_template('index.html', events=events)
 
-@bp.route('/run')
-def run():
-    search = '%' + 'run' + '%'
+@bp.route('/jazz')
+def jazz():
+    search = '%' + 'jazz' + '%'
     events = Event.query.filter(Event.event_category.like(search)).all()
     return render_template('index.html', events=events)
 
 
-@bp.route('/auction')
-def auction():
-    search = '%' + 'auction' + '%'
+@bp.route('/electronic music')
+def electronic_music():
+    search = '%' + 'electronic music' + '%'
     events = Event.query.filter(Event.event_category.like(search)).all()
     return render_template('index.html', events=events)
 
 
-@bp.route('/donation')
-def donation():
-    search = '%' + 'donation' + '%'
+@bp.route('/classical music')
+def classical_music():
+    search = '%' + 'classical music' + '%'
+    events = Event.query.filter(Event.event_category.like(search)).all()
+    return render_template('index.html', events=events)
+
+
+@bp.route('/hip-hop')
+def hip_hop():
+    search = '%' + 'hip-hop' + '%'
+    events = Event.query.filter(Event.event_category.like(search)).all()
+    return render_template('index.html', events=events)
+
+
+@bp.route('/folk music')
+def folk_music():
+    search = '%' + 'folk music' + '%'
     events = Event.query.filter(Event.event_category.like(search)).all()
     return render_template('index.html', events=events)
 
