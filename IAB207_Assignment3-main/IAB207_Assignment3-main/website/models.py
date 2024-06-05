@@ -59,17 +59,4 @@ class Comment(db.Model):
     def __repr__(self):
         return "<Comment: {}>".format(self.text)
 
-class Order(db.Model):
-    __tablename__ = 'orders'
-
-    id = db.Column(db.Integer, index=True, primary_key=True)
-    date_ordered = db.Column(db.Date, nullable=False, default=datetime.now())
-    number_of_tickets = db.Column(db.Integer, nullable=False)
-
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
-
-    user = db.relationship('User', backref='Order')
-    event = db.relationship('Event', backref='Order') 
-    def get_time_nice(self):
-        return self.date_ordered.strftime("%Y/%m/%d")    
+   
