@@ -192,17 +192,4 @@ def booking(event_id):
 
 
 # Comment
-@eventbp.route('/<int:event_id>/comment', methods=['GET', 'POST'])
-@login_required
-def comment(event_id):
-    form = CommentForm()
-    event = Event.query.filter_by(id=event_id).first()
-    if form.validate_on_submit():
-        new_comment = Comment(comment=form.text.data, user=current_user, event=event)
-        db.session.add(new_comment)
-        db.session.commit()
 
-        flash('Comment added successfully!', 'success')
-        return redirect(url_for('event.show', event_id=event.id))  # Redirect to the event show page
-
-    return render_template('event/show.html', commentform=form, event=event)
