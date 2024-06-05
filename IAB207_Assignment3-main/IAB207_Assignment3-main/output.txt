@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 Albert Mathew (7):
       Create database
       Delete database
