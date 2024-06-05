@@ -17,10 +17,11 @@ def show(event_id):
         flash('Event not found', 'error')
         return redirect(url_for('main.index'))
     # Create the comment form
+    creator = User.query.get(event.user_id)
     cform = CommentForm()
     bform = BookingForm()
 
-    return render_template('event/show.html', event=event, commentform=cform, bookingform=bform)
+    return render_template('event/show.html', event=event, creator=creator, commentform=cform, bookingform=bform)
 
 @eventbp.route('/create', methods=['GET', 'POST'])
 @login_required

@@ -64,20 +64,6 @@
             </div>
         </nav>
 
-
-        <!-- <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto" id="navbar-nav">
-                        <a class="nav-item nav-link" href="{{ url_for('event.create_event') }}">Create An Event</a>
-                        <a class="nav-item nav-link" href="{{ url_for('main.history') }}">History</a>
-                        {% if current_user.is_authenticated %}
-                        <a class="nav-item nav-link disabled text-muted" href="#">Welcome! {{current_user.name}}</a>
-                        <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
-                        {% else %}
-                        <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
-                        <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Log In</a>
-                        {% endif %}
-                </div> -->
-
         {% block header %}
         {% endblock %}
 

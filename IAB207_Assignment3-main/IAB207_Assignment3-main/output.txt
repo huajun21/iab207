@@ -82,3 +82,21 @@ soozkai (19):
       Update show.html
       minor design updates
 
+Cole Gage-Sullivan (14):
+      Adjust UI to Assignment 2 on all pages
+      Update base.html
+      Create new navigation UI
+      Update index.html UI
+      Update login UI
+      Update signup UI
+      Create footer
+      Create simple site logo
+      Update 404 page UI
+      Update 500 page UI
+      Update show.html UI
+      Custom styling in style.css
+      Navbar and majority site responsiveness updates
+      Get and display creator info for organised by on events page
+
+
+

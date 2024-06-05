@@ -207,3 +207,7 @@ form {
 .nav-search .home-search-btn {
   white-space: nowrap;
 }
+
+.fw-medium {
+  font-weight: 500;
+}
