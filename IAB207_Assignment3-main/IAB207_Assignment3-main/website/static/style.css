@@ -204,5 +204,11 @@ form {
   flex: 1 1 auto; 
 }
 
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
 .nav-search .home-search-btn {
   white-space: nowrap;
