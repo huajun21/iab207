@@ -42,7 +42,7 @@
         <img class="img img-fluid text-center mx-auto" src="../static/image/guitar.png" alt="Guitar" />
       </div>
       <div class="col-md-8">
-        <h1 class="home-about-title">MelodyMeet provides a trusted platform for 700,000+ fans fostering a vibrant and
+        <h1 class="home-about-title text-center text-md-left">MelodyMeet provides a trusted platform for 700,000+ fans fostering a vibrant and
           safe music community</h1>
       </div>
     </div>
@@ -58,7 +58,7 @@
     <p class="lead">See what's on Melody Meet</p>
 
    <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3 mb-md-0">
         <h3>Categories</h3>
         <div class="list-group" id="list-group">
           <a href="{{ url_for('main.all') }}" class="list-group-item list-group-item-action">All</a>
@@ -75,7 +75,7 @@
       <div class="col-md-9">
         <div class="row" id="eventList">
           {% for event in events %}
-          <div class="col-md-4 mb-4">
+          <div class="col-md-6 col-xl-4 mb-4">
             <div class="card">
               <img src="{{ event.event_image }}" class="card-img-top">
               <div class="card-body">
