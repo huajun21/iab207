@@ -192,6 +192,7 @@ def booking(event_id):
 
 
 # Comment
+
 @eventbp.route('/<int:event_id>/comment', methods=['GET', 'POST'])
 @login_required
 def comment(event_id):
@@ -206,3 +207,4 @@ def comment(event_id):
         return redirect(url_for('event.show', event_id=event.id))  # Redirect to the event show page
 
     return render_template('event/show.html', commentform=form, event=event)
+
